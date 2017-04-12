@@ -37,7 +37,7 @@ class Genotype(enum.Enum):
 	RTSGP = 30
 
 class Simulation:
-	def __init__(self, output="output.csv", max_steps=5000):
+	def __init__(self, output="output", max_steps=5000):
 		self.fitness = [1.012, 1.142, 1.105, 1.027, 1.000, 1.103, 1.118, 1.047, 1.022, 1.205, 1.149, 1.193,
 						1.124, 1.185, 1.075, 1.197, 1.158, 1.189, 1.124, 1.204, 1.126, 1.201, 1.280, 1.216, 1.186, 1.228, 1.277,
 						1.190, 1.212, 1.300, 1.328]
@@ -99,7 +99,7 @@ class Simulation:
 
 
 	def run(self):
-		with open("output.txt", mode="w") as ofile:
+		with open(self.output, mode="w") as ofile:
 			for i in range(self.max_steps):
 				ofile.write(str(self.weights)+"\n")
 				self.update()
