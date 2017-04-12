@@ -1,7 +1,7 @@
 import random
 
 class Simulation:
-	def __init__(self, output="output.csv", max_steps=5000):
+	def __init__(self, output="output", max_steps=5000):
 		self.fitness = [[2, 5.1, 5.1], [4.9, 3, 5.9], [4.9, 6.1, 3]]
 		self.weights = [[(1/3), (1/3), (1/3)], [(1/3), (1/3), (1/3)]]
 		self.output = output
@@ -54,11 +54,8 @@ class Simulation:
 
 	def print_weights(self):
 		with open(self.output, mode="a") as ofile:
-			for row in self.weights:
-				for col in row:
-					ofile.write(str(col) +",")
+			ofile.write(str(self.weights) +"\n")
 
-			ofile.write("\n")
 
 
 	def run(self):
